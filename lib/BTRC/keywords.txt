@@ -1,0 +1,31 @@
+﻿#######################################
+# Syntax coloring map for BTRC library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+BTRC	KEYWORD1
+BTRCData	KEYWORD1
+
+#######################################
+# Methods and functions (KEYWORD2)
+#######################################
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+data	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+BTRC_JOYSTICKS	LITERAL1
+BTRC_BUTTONS	LITERAL1
+BTRC_SPEED	LITERAL1
+BTRC_TIMEOUT	LITERAL1
+BTRC_MAGIC	LITERAL1
+BTRC_MAGIC_LEN	LITERAL1
+BTRC_DATA_LEN	LITERAL1
+
+# vim: set noet:
