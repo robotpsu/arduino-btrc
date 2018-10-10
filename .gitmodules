@@ -1,3 +1,6 @@
 [submodule "lib/Joystick"]
 	path = lib/Joystick
 	url = git@github.com:robotpsu/arduino-joystick.git
+[submodule "src/AT"]
+	path = src/AT
+	url = git@github.com:robotpsu/arduino-at.git
