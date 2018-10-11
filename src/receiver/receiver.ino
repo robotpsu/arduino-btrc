@@ -41,6 +41,7 @@ void loop() {
     // Get data
     Serial.readBytes((byte*)&data, BTRC_DATA_LEN);
 
+    
     // Handle joysticks data
     for (auto i = 0; i < BTRC_JOYSTICKS; i++) {
       analogWrite(j[i].x, pwm(data.j[i].x));
@@ -51,6 +52,13 @@ void loop() {
     // Handle buttons data
     for (auto i = 0; i < BTRC_BUTTONS; i++)
       digitalWrite(leds[i], data.b[i]);
+  }
+}
+
+void serialEvent() {
+  while (Serial.available()) {
+
+    
   }
 }
 
