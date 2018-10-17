@@ -17,13 +17,15 @@ SoftwareSerial BTRC(10, 11);
 #define BTRC Serial
 #endif
 
+#define PIN_STATE 2
+
 #define PIN_J1_X A0  ///< Pin X of the 1st joystick (analog).
 #define PIN_J1_Y A1  ///< Pin Y of the 1st joystick (analog).
-#define PIN_J1_SW 2  ///< Pin SW of the 1st joystick (digital).
+#define PIN_J1_SW 8  ///< Pin SW of the 1st joystick (digital).
 
 #define PIN_J2_X A2  ///< Pin X of the 2nd joystick (analog).
 #define PIN_J2_Y A3  ///< Pin Y of the 2nd joystick (analog).
-#define PIN_J2_SW 3  ///< Pin SW of the 2nd joystick (digital).
+#define PIN_J2_SW 9  ///< Pin SW of the 2nd joystick (digital).
 
 Joystick j[BTRC_JOYSTICKS];
 const byte b[BTRC_BUTTONS] = {4, 5, 6, 7};
@@ -36,6 +38,8 @@ void setup() {
   for (auto i = 0; i < BTRC_BUTTONS; i++)
     pinMode(b[i], INPUT_PULLUP);
 
+  pinMode(LED_BUILTIN, INPUT);
+
   BTRC.begin(BTRC_SPEED);
   #ifdef DEBUG
   Serial.begin(BTRC_SPEED);
@@ -43,6 +47,10 @@ void setup() {
 }
 
 void loop() {
+  Serial.print("State: ");
+  Serial.println(digitalRead(LED_BUILTIN));
+  delay(1000);
+/*
   // Get joysticks position and switch state
   for (auto i = 0; i < BTRC_JOYSTICKS; i++) {
     data.j[i].x = j[i].x();
@@ -75,6 +83,7 @@ void loop() {
   BTRC.write((byte*)&data, BTRC_DATA_LEN);
 
   delay(BTRC_TIMEOUT);
+//*/
 }
 
 /* vim: set ft=arduino et sw=2 ts=2: */

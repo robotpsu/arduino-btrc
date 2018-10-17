@@ -32,6 +32,10 @@ struct BTRCData {
 };
 const size_t BTRC_DATA_LEN = sizeof(BTRCData);
 
+class BTRC {
+  
+};
+
 #endif
 
 /* vim: set ft=arduino et sw=2 ts=2: */
